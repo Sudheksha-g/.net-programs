@@ -1,0 +1,336 @@
+31. Find the Smallest Element in an Array
+
+using System;
+
+class SmallestInArray
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int smallest = arr[0];
+        foreach (int num in arr)
+            if (num < smallest) smallest = num;
+
+        Console.WriteLine($"Smallest element: {smallest}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 4
+Enter array elements:
+12
+34
+5
+78
+Smallest element: 5
+
+
+---
+
+32. Find the Sum of Even Numbers in an Array
+
+using System;
+
+class SumEvenNumbers
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int sum = 0;
+        foreach (int num in arr)
+            if (num % 2 == 0) sum += num;
+
+        Console.WriteLine($"Sum of even numbers: {sum}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 5
+Enter array elements:
+1
+2
+3
+4
+5
+Sum of even numbers: 6
+
+
+---
+
+33. Check if a Number is Positive, Negative, or Zero
+
+using System;
+
+class CheckNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+
+        if (num > 0)
+            Console.WriteLine("Positive");
+        else if (num < 0)
+            Console.WriteLine("Negative");
+        else
+            Console.WriteLine("Zero");
+    }
+}
+
+Output (example):
+
+Enter a number: -5
+Negative
+
+
+---
+
+34. Find the Average of Array Elements
+
+using System;
+
+class ArrayAverage
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int sum = 0;
+        foreach (int num in arr)
+            sum += num;
+
+        double average = (double)sum / size;
+        Console.WriteLine($"Average of array elements: {average:F2}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 4
+Enter array elements:
+10
+20
+30
+40
+Average of array elements: 25.00
+
+
+---
+
+35. Find the Maximum and Minimum in an Array
+
+using System;
+
+class MaxMinArray
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int max = arr[0], min = arr[0];
+        foreach (int num in arr)
+        {
+            if (num > max) max = num;
+            if (num < min) min = num;
+        }
+
+        Console.WriteLine($"Maximum: {max}, Minimum: {min}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 4
+Enter array elements:
+10
+5
+30
+15
+Maximum: 30, Minimum: 5
+
+
+---
+
+36. Count Positive and Negative Numbers in an Array
+
+using System;
+
+class CountPosNeg
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int positive = 0, negative = 0;
+        foreach (int num in arr)
+        {
+            if (num > 0) positive++;
+            else if (num < 0) negative++;
+        }
+
+        Console.WriteLine($"Positive: {positive}, Negative: {negative}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 5
+Enter array elements:
+10
+-5
+15
+-20
+0
+Positive: 2, Negative: 2
+
+
+---
+
+37. Display the Fibonacci Series Using Recursion
+
+using System;
+
+class FibonacciRecursion
+{
+    static int Fibonacci(int n)
+    {
+        if (n <= 1) return n;
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter the number of terms: ");
+        int terms = int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < terms; i++)
+            Console.Write(Fibonacci(i) + " ");
+    }
+}
+
+Output (example):
+
+Enter the number of terms: 5
+0 1 1 2 3
+
+
+---
+
+38. Find Factorial Using Recursion
+
+using System;
+
+class FactorialRecursion
+{
+    static int Factorial(int n)
+    {
+        if (n == 0) return 1;
+        return n * Factorial(n - 1);
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        Console.WriteLine($"Factorial: {Factorial(num)}");
+    }
+}
+
+Output (example):
+
+Enter a number: 5
+Factorial: 120
+
+
+---
+
+39. Reverse a Number
+
+using System;
+
+class ReverseNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int reverse = 0;
+
+        while (num > 0)
+        {
+            reverse = reverse * 10 + num % 10;
+            num /= 10;
+        }
+
+        Console.WriteLine($"Reversed number: {reverse}");
+    }
+}
+
+Output (example):
+
+Enter a number: 123
+Reversed number: 321
+
+
+---
+
+40. Calculate Compound Interest
+
+using System;
+
+class CompoundInterest
+{
+    static void Main()
+    {
+        Console.Write("Enter Principal: ");
+        double principal = double.Parse(Console.ReadLine());
+        Console.Write("Enter Rate (%): ");
+        double rate = double.Parse(Console.ReadLine());
+        Console.Write("Enter Time (years): ");
+        double time = double.Parse(Console.ReadLine());
+
+        double amount = principal * Math.Pow(1 + rate / 100, time);
+        Console.WriteLine($"Compound Interest: {amount - principal:F2}");
+    }
+}
+
+Output (example):
+
+Enter Principal: 1000
+Enter Rate (%): 5
+Enter Time (years): 2
+Compound Interest: 102.50
