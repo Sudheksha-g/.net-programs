@@ -1,0 +1,267 @@
+1. Program to Print "Hello, World!"
+
+using System;
+
+class HelloWorld
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+
+Output:
+
+Hello, World!
+
+
+---
+
+2. Sum of Two Numbers
+
+using System;
+
+class Sum
+{
+    static void Main()
+    {
+        Console.Write("Enter first number: ");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.Write("Enter second number: ");
+        int num2 = int.Parse(Console.ReadLine());
+        int sum = num1 + num2;
+        Console.WriteLine($"Sum: {sum}");
+    }
+}
+
+Output (example):
+
+Enter first number: 5
+Enter second number: 7
+Sum: 12
+
+
+---
+
+3. Check Even or Odd
+
+using System;
+
+class EvenOdd
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        if (num % 2 == 0)
+            Console.WriteLine($"{num} is Even");
+        else
+            Console.WriteLine($"{num} is Odd");
+    }
+}
+
+Output (example):
+
+Enter a number: 9
+9 is Odd
+
+
+---
+
+4. Display Multiplication Table
+
+using System;
+
+class MultiplicationTable
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine($"{num} x {i} = {num * i}");
+        }
+    }
+}
+
+Output (example):
+
+Enter a number: 3
+3 x 1 = 3
+3 x 2 = 6
+...
+3 x 10 = 30
+
+
+---
+
+5. Reverse a String
+
+using System;
+
+class ReverseString
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        char[] charArray = str.ToCharArray();
+        Array.Reverse(charArray);
+        Console.WriteLine("Reversed String: " + new string(charArray));
+    }
+}
+
+Output (example):
+
+Enter a string: Hello
+Reversed String: olleH
+
+
+---
+
+6. Factorial of a Number
+
+using System;
+
+class Factorial
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int fact = 1;
+        for (int i = 1; i <= num; i++)
+        {
+            fact *= i;
+        }
+        Console.WriteLine($"Factorial: {fact}");
+    }
+}
+
+Output (example):
+
+Enter a number: 5
+Factorial: 120
+
+
+---
+
+7. Check if a Number is Prime
+
+using System;
+
+class PrimeCheck
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        bool isPrime = true;
+
+        if (num <= 1) isPrime = false;
+        for (int i = 2; i <= Math.Sqrt(num); i++)
+        {
+            if (num % i == 0)
+            {
+                isPrime = false;
+                break;
+            }
+        }
+
+        Console.WriteLine(isPrime ? "Prime" : "Not Prime");
+    }
+}
+
+Output (example):
+
+Enter a number: 7
+Prime
+
+
+---
+
+8. Find Largest of Three Numbers
+
+using System;
+
+class LargestNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+        Console.Write("Enter third number: ");
+        int c = int.Parse(Console.ReadLine());
+
+        int largest = (a > b) ? ((a > c) ? a : c) : ((b > c) ? b : c);
+        Console.WriteLine($"Largest: {largest}");
+    }
+}
+
+Output (example):
+
+Enter first number: 4
+Enter second number: 9
+Enter third number: 2
+Largest: 9
+
+
+---
+
+9. Check Palindrome String
+
+using System;
+
+class Palindrome
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        string reversed = new string(str.Reverse().ToArray());
+
+        if (str.Equals(reversed, StringComparison.OrdinalIgnoreCase))
+            Console.WriteLine("Palindrome");
+        else
+            Console.WriteLine("Not a Palindrome");
+    }
+}
+
+Output (example):
+
+Enter a string: Radar
+Palindrome
+
+
+---
+
+10. Generate Fibonacci Series
+
+using System;
+
+class Fibonacci
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of terms: ");
+        int terms = int.Parse(Console.ReadLine());
+        int a = 0, b = 1, c;
+
+        Console.Write("Fibonacci Series: " + a + " " + b + " ");
+        for (int i = 2; i < terms; i++)
+        {
+            c = a + b;
+            Console.Write(c + " ");
+            a = b;
+            b = c;
+        }
+    }
+}
+
+Output (example):
+
+Enter the number of terms: 5
+Fibonacci Series: 0 1 1 2 3
