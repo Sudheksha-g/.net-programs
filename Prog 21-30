@@ -1,0 +1,320 @@
+21. Find Sum of Digits of a Number
+
+using System;
+
+class SumOfDigits
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int sum = 0;
+
+        while (num > 0)
+        {
+            sum += num % 10;
+            num /= 10;
+        }
+
+        Console.WriteLine($"Sum of digits: {sum}");
+    }
+}
+
+Output (example):
+
+Enter a number: 123
+Sum of digits: 6
+
+
+---
+
+22. Find the Second Largest Element in an Array
+
+using System;
+
+class SecondLargest
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        Array.Sort(arr);
+        Console.WriteLine($"Second largest element: {arr[size - 2]}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 5
+Enter array elements:
+10
+20
+30
+40
+50
+Second largest element: 40
+
+
+---
+
+23. Calculate Area of a Circle
+
+using System;
+
+class CircleArea
+{
+    static void Main()
+    {
+        Console.Write("Enter radius of the circle: ");
+        double radius = double.Parse(Console.ReadLine());
+        double area = Math.PI * radius * radius;
+
+        Console.WriteLine($"Area of the circle: {area:F2}");
+    }
+}
+
+Output (example):
+
+Enter radius of the circle: 5
+Area of the circle: 78.54
+
+
+---
+
+24. Check Palindrome Number
+
+using System;
+
+class PalindromeNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int original = num, reverse = 0;
+
+        while (num > 0)
+        {
+            reverse = reverse * 10 + num % 10;
+            num /= 10;
+        }
+
+        if (original == reverse)
+            Console.WriteLine($"{original} is a Palindrome");
+        else
+            Console.WriteLine($"{original} is not a Palindrome");
+    }
+}
+
+Output (example):
+
+Enter a number: 121
+121 is a Palindrome
+
+
+---
+
+25. Find the Largest Element in an Array
+
+using System;
+
+class LargestInArray
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int largest = arr[0];
+        foreach (int num in arr)
+            if (num > largest) largest = num;
+
+        Console.WriteLine($"Largest element: {largest}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 4
+Enter array elements:
+12
+34
+56
+78
+Largest element: 78
+
+
+---
+
+26. Count Words in a Sentence
+
+using System;
+
+class WordCount
+{
+    static void Main()
+    {
+        Console.Write("Enter a sentence: ");
+        string sentence = Console.ReadLine();
+        string[] words = sentence.Split(' ');
+
+        Console.WriteLine($"Number of words: {words.Length}");
+    }
+}
+
+Output (example):
+
+Enter a sentence: Hello world, how are you?
+Number of words: 5
+
+
+---
+
+27. Reverse an Array
+
+using System;
+
+class ReverseArray
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        Array.Reverse(arr);
+        Console.WriteLine("Reversed array: " + string.Join(", ", arr));
+    }
+}
+
+Output (example):
+
+Enter size of the array: 3
+Enter array elements:
+1
+2
+3
+Reversed array: 3, 2, 1
+
+
+---
+
+28. Find Armstrong Numbers in a Range
+
+using System;
+
+class ArmstrongInRange
+{
+    static void Main()
+    {
+        Console.Write("Enter the start of range: ");
+        int start = int.Parse(Console.ReadLine());
+        Console.Write("Enter the end of range: ");
+        int end = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Armstrong numbers:");
+        for (int num = start; num <= end; num++)
+        {
+            int sum = 0, temp = num;
+            while (temp > 0)
+            {
+                int digit = temp % 10;
+                sum += digit * digit * digit;
+                temp /= 10;
+            }
+            if (sum == num)
+                Console.WriteLine(num);
+        }
+    }
+}
+
+Output (example):
+
+Enter the start of range: 100
+Enter the end of range: 500
+Armstrong numbers:
+153
+370
+371
+407
+
+
+---
+
+29. Check Perfect Number
+
+using System;
+
+class PerfectNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int sum = 0;
+
+        for (int i = 1; i < num; i++)
+            if (num % i == 0) sum += i;
+
+        if (sum == num)
+            Console.WriteLine($"{num} is a Perfect Number");
+        else
+            Console.WriteLine($"{num} is not a Perfect Number");
+    }
+}
+
+Output (example):
+
+Enter a number: 28
+28 is a Perfect Number
+
+
+---
+
+30. Calculate Sum of Array Elements
+
+using System;
+
+class ArraySum
+{
+    static void Main()
+    {
+        Console.Write("Enter size of the array: ");
+        int size = int.Parse(Console.ReadLine());
+        int[] arr = new int[size];
+
+        Console.WriteLine("Enter array elements:");
+        for (int i = 0; i < size; i++)
+            arr[i] = int.Parse(Console.ReadLine());
+
+        int sum = 0;
+        foreach (int num in arr)
+            sum += num;
+
+        Console.WriteLine($"Sum of array elements: {sum}");
+    }
+}
+
+Output (example):
+
+Enter size of the array: 3
+Enter array elements:
+2
+4
+6
+Sum of array elements: 12
