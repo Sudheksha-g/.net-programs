@@ -1,0 +1,288 @@
+11. Check if a Number is Armstrong
+
+using System;
+
+class ArmstrongNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int sum = 0, temp = num;
+
+        while (temp > 0)
+        {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+
+        if (sum == num)
+            Console.WriteLine($"{num} is an Armstrong number");
+        else
+            Console.WriteLine($"{num} is not an Armstrong number");
+    }
+}
+
+Output (example):
+
+Enter a number: 153
+153 is an Armstrong number
+
+
+---
+
+12. Calculate Simple Interest
+
+using System;
+
+class SimpleInterest
+{
+    static void Main()
+    {
+        Console.Write("Enter Principal: ");
+        double principal = double.Parse(Console.ReadLine());
+        Console.Write("Enter Rate (%): ");
+        double rate = double.Parse(Console.ReadLine());
+        Console.Write("Enter Time (years): ");
+        double time = double.Parse(Console.ReadLine());
+
+        double simpleInterest = (principal * rate * time) / 100;
+        Console.WriteLine($"Simple Interest: {simpleInterest}");
+    }
+}
+
+Output (example):
+
+Enter Principal: 1000
+Enter Rate (%): 5
+Enter Time (years): 2
+Simple Interest: 100
+
+
+---
+
+13. Convert Celsius to Fahrenheit
+
+using System;
+
+class TemperatureConversion
+{
+    static void Main()
+    {
+        Console.Write("Enter temperature in Celsius: ");
+        double celsius = double.Parse(Console.ReadLine());
+        double fahrenheit = (celsius * 9 / 5) + 32;
+
+        Console.WriteLine($"Temperature in Fahrenheit: {fahrenheit}");
+    }
+}
+
+Output (example):
+
+Enter temperature in Celsius: 25
+Temperature in Fahrenheit: 77
+
+
+---
+
+14. Count Vowels in a String
+
+using System;
+
+class VowelCount
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string str = Console.ReadLine();
+        int count = 0;
+
+        foreach (char c in str.ToLower())
+        {
+            if ("aeiou".Contains(c)) count++;
+        }
+
+        Console.WriteLine($"Number of vowels: {count}");
+    }
+}
+
+Output (example):
+
+Enter a string: Hello
+Number of vowels: 2
+
+
+---
+
+15. Calculate Power of a Number
+
+using System;
+
+class Power
+{
+    static void Main()
+    {
+        Console.Write("Enter the base: ");
+        double baseNum = double.Parse(Console.ReadLine());
+        Console.Write("Enter the exponent: ");
+        int exponent = int.Parse(Console.ReadLine());
+        double result = Math.Pow(baseNum, exponent);
+
+        Console.WriteLine($"{baseNum}^{exponent} = {result}");
+    }
+}
+
+Output (example):
+
+Enter the base: 2
+Enter the exponent: 3
+2^3 = 8
+
+
+---
+
+16. Swap Two Numbers Without Temp Variable
+
+using System;
+
+class SwapNumbers
+{
+    static void Main()
+    {
+        Console.Write("Enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        Console.WriteLine($"After Swap: First = {a}, Second = {b}");
+    }
+}
+
+Output (example):
+
+Enter first number: 5
+Enter second number: 3
+After Swap: First = 3, Second = 5
+
+
+---
+
+17. Check Leap Year
+
+using System;
+
+class LeapYear
+{
+    static void Main()
+    {
+        Console.Write("Enter a year: ");
+        int year = int.Parse(Console.ReadLine());
+
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            Console.WriteLine($"{year} is a Leap Year");
+        else
+            Console.WriteLine($"{year} is not a Leap Year");
+    }
+}
+
+Output (example):
+
+Enter a year: 2024
+2024 is a Leap Year
+
+
+---
+
+18. Find GCD of Two Numbers
+
+using System;
+
+class GCD
+{
+    static void Main()
+    {
+        Console.Write("Enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+
+        while (a != b)
+        {
+            if (a > b) a -= b;
+            else b -= a;
+        }
+
+        Console.WriteLine($"GCD: {a}");
+    }
+}
+
+Output (example):
+
+Enter first number: 54
+Enter second number: 24
+GCD: 6
+
+
+---
+
+19. Find ASCII Value of a Character
+
+using System;
+
+class ASCIIValue
+{
+    static void Main()
+    {
+        Console.Write("Enter a character: ");
+        char c = Console.ReadLine()[0];
+        int ascii = (int)c;
+
+        Console.WriteLine($"ASCII value of '{c}': {ascii}");
+    }
+}
+
+Output (example):
+
+Enter a character: A
+ASCII value of 'A': 65
+
+
+---
+
+20. Find LCM of Two Numbers
+
+using System;
+
+class LCM
+{
+    static void Main()
+    {
+        Console.Write("Enter first number: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Enter second number: ");
+        int b = int.Parse(Console.ReadLine());
+
+        int lcm = (a > b) ? a : b;
+
+        while (true)
+        {
+            if (lcm % a == 0 && lcm % b == 0)
+            {
+                Console.WriteLine($"LCM: {lcm}");
+                break;
+            }
+            lcm++;
+        }
+    }
+}
+
+Output (example):
+
+Enter first number: 4
+Enter second number: 6
+LCM: 12
